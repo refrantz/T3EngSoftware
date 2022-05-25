@@ -1,6 +1,6 @@
 @startuml
 
-node "viacep" {
+node "via-cep" {
   [service] ---> cepdatabase
   
   database "cepdatabase" {
