@@ -1,0 +1,20 @@
+@startuml
+
+node "viacep" {
+  [service] ---> cepdatabase
+  
+  database "cepdatabase" {
+    
+  }
+}
+
+package "Web app" {
+  [Feature] ---> [cep-promise]
+  [cep-promise] ---> service
+}
+
+
+[cep-promise] ---> [npm/node-fetch]
+[cep-promise] ---> [npm/unfetch]
+
+@enduml
