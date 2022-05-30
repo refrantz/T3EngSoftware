@@ -1,0 +1,12 @@
+package "viacep.js" {
+  [fetchViacepPromise] ---> [analyzeAndParseResponse]
+  [fetchViacepPromise] ---> [checkForViaCepError]
+  [fetchViacepPromise] ---> [extractCepValuesFromResponse]
+  [fetchViacepPromise] ---> [throwApplicationError]
+}
+
+[modules.export] ---> [fetchViacepPromise]
+
+[fetchViacepPromise] ---> [npm/node-fetch]
+
+[throwApplicationError] ---> [ServiceError]
