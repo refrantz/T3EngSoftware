@@ -1,0 +1,30 @@
+@startuml
+
+node "client" {
+  [service]
+}
+
+
+
+
+package "Serviços" {
+  [service] ---> [servidor]
+  [brasilapi]
+  [correios]
+  [viacep.com.br]
+  [fipe]
+  [ibge]
+  [servidor] ---> [brasilapi]
+  [servidor] ---> [correios]
+  [servidor] ---> [viacep.com.br]
+  [servidor] ---> [fipe]
+  [servidor] ---> [ibge]
+}
+
+[brasilapi] ---> [brasilapi.com.br]
+[correios] ---> [correios.com.br_API]
+[viacep.com.br] ---> [viacep.com.br_API]
+[fipe] ---> [tabelafipe.com.br_API]
+[ibge] ---> [ibge.com.br]
+
+@enduml
